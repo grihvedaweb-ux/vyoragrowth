@@ -1,20 +1,24 @@
 import { useState } from 'react';
-import { supabase } from '../../lib/supabase';
 import { ArrowUpRight } from 'lucide-react';
-import { Input, Select, SuccessCard } from './ServiceInquiryForm';
+import { openWhatsAppWithMessage } from '../../lib/whatsapp';
+import { Input, Select } from './ServiceInquiryForm';
 
 export default function WorkshopForm({ defaultWorkshop = '' }: { defaultWorkshop?: string }) {
   const [state, setState] = useState({ name: '', phone: '', workshop: defaultWorkshop, mode: '', city: '', experience: '' });
-  const [status, setStatus] = useState<'idle' | 'loading' | 'done' | 'error'>('idle');
+  const [status, setStatus] = useState<'idle' | 'loading'>('idle');
 
-  const submit = async (e: React.FormEvent) => {
+  const submit = (e: React.FormEvent) => {
     e.preventDefault();
     setStatus('loading');
-    const { error } = await supabase.from('workshop_registrations').insert(state);
-    setStatus(error ? 'error' : 'done');
+    openWhatsAppWithMessage('I want to register for a workshop.', [
+      ['Full Name', state.name],
+      ['Phone / WhatsApp', state.phone],
+      ['Workshop', state.workshop],
+      ['Mode', state.mode],
+      ['City', state.city],
+      ['Experience Level', state.experience],
+    ]);
   };
-
-  if (status === 'done') return <SuccessCard message="You're registered. We'll WhatsApp you the session details shortly." />;
 
   return (
     <form onSubmit={submit} className="grid md:grid-cols-2 gap-4">
@@ -26,9 +30,8 @@ export default function WorkshopForm({ defaultWorkshop = '' }: { defaultWorkshop
       <Select label="Experience Level" value={state.experience} onChange={(v) => setState({ ...state, experience: v })} options={['Beginner', 'Intermediate', 'Advanced']} />
       <div className="md:col-span-2">
         <button disabled={status === 'loading'} className="btn-primary w-full justify-center">
-          {status === 'loading' ? 'Registering…' : 'Register Now'} <ArrowUpRight className="w-4 h-4" />
+          {status === 'loading' ? 'Opening WhatsApp...' : 'Register on WhatsApp'} <ArrowUpRight className="w-4 h-4" />
         </button>
-        {status === 'error' && <p className="mt-3 text-sm text-red-400">Something went wrong. Please try again.</p>}
       </div>
     </form>
   );

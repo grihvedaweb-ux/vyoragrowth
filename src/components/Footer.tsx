@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Instagram, Facebook, Youtube, Mail, Phone, MapPin, ArrowUpRight } from 'lucide-react';
+import { socialLinks } from '../lib/social';
 
 const LOGO = 'https://i.ibb.co/60dxwj2m/VYORA-GROWTH-1.png';
 
@@ -20,9 +21,9 @@ export default function Footer() {
               A premium AI-powered digital agency helping ambitious brands in Ahmedabad and across India scale with modern websites, performance marketing, and AI systems.
             </p>
             <div className="mt-8 flex items-center gap-3">
-              <a href="https://instagram.com" className="w-10 h-10 flex items-center justify-center rounded-full border border-cream-50/15 hover:border-gold-400 hover:text-gold-400 transition" aria-label="Instagram"><Instagram className="w-4 h-4" /></a>
-              <a href="https://facebook.com" className="w-10 h-10 flex items-center justify-center rounded-full border border-cream-50/15 hover:border-gold-400 hover:text-gold-400 transition" aria-label="Facebook"><Facebook className="w-4 h-4" /></a>
-              <a href="https://youtube.com" className="w-10 h-10 flex items-center justify-center rounded-full border border-cream-50/15 hover:border-gold-400 hover:text-gold-400 transition" aria-label="YouTube"><Youtube className="w-4 h-4" /></a>
+              <a href={socialLinks.instagram} target="_blank" rel="noreferrer" className="w-10 h-10 flex items-center justify-center rounded-full border border-cream-50/15 hover:border-gold-400 hover:text-gold-400 transition" aria-label="Instagram"><Instagram className="w-4 h-4" /></a>
+              <a href={socialLinks.facebook} target="_blank" rel="noreferrer" className="w-10 h-10 flex items-center justify-center rounded-full border border-cream-50/15 hover:border-gold-400 hover:text-gold-400 transition" aria-label="Facebook"><Facebook className="w-4 h-4" /></a>
+              <a href={socialLinks.youtube} target="_blank" rel="noreferrer" className="w-10 h-10 flex items-center justify-center rounded-full border border-cream-50/15 hover:border-gold-400 hover:text-gold-400 transition" aria-label="YouTube"><Youtube className="w-4 h-4" /></a>
             </div>
           </div>
 

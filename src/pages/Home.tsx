@@ -10,21 +10,25 @@ import ScaleImage from '../components/ScaleImage';
 import StickyStack from '../components/StickyStack';
 import ImageMarquee from '../components/ImageMarquee';
 import Bento from '../components/Bento';
+import VideoBackground from '../components/VideoBackground';
 import { services } from '../data/services';
 import { useSEO } from '../lib/seo';
 
 const LOGO = 'https://i.ibb.co/60dxwj2m/VYORA-GROWTH-1.png';
+const HERO_VIDEO_URL = 'https://www.youtube-nocookie.com/embed/mXW1EKxjpTQ?autoplay=1&mute=1&controls=0&disablekb=1&fs=0&loop=1&playlist=mXW1EKxjpTQ&playsinline=1&modestbranding=1&rel=0&iv_load_policy=3&cc_load_policy=0&showinfo=0&autohide=1';
 
-const HERO_IMAGE = 'https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&w=1800';
+const HERO_IMAGE = 'https://i.ibb.co/h1f4Ww0N/Chat-GPT-Image-May-6-2026-07-56-17-PM.webp';
 
 const marqueeImages = [
-  'https://images.pexels.com/photos/6069112/pexels-photo-6069112.jpeg?auto=compress&w=800',
-  'https://images.pexels.com/photos/120049/pexels-photo-120049.jpeg?auto=compress&w=800',
-  'https://images.pexels.com/photos/1170979/pexels-photo-1170979.jpeg?auto=compress&w=800',
-  'https://images.pexels.com/photos/1581384/pexels-photo-1581384.jpeg?auto=compress&w=800',
-  'https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg?auto=compress&w=800',
-  'https://images.pexels.com/photos/4145190/pexels-photo-4145190.jpeg?auto=compress&w=800',
-  'https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&w=800',
+  'https://i.ibb.co/h1f4Ww0N/Chat-GPT-Image-May-6-2026-07-56-17-PM.webp',
+  'https://i.ibb.co/bRNZ9KQr/Chat-GPT-Image-May-6-2026-07-59-04-PM.webp',
+  'https://i.ibb.co/sv50q2Yx/Chat-GPT-Image-May-6-2026-08-03-41-PM.webp',
+  'https://i.ibb.co/xK0WSWBv/Chat-GPT-Image-May-6-2026-08-05-47-PM.webp',
+  'https://i.ibb.co/xK0WSWBv/Chat-GPT-Image-May-6-2026-08-05-47-PM.webp',
+  'https://i.ibb.co/ymcsP1qF/Chat-GPT-Image-May-6-2026-08-14-41-PM.webp',
+  'https://i.ibb.co/dwyjLzHC/Chat-GPT-Image-May-6-2026-08-18-10-PM.webp',
+  'https://i.ibb.co/pjTwXQYQ/Chat-GPT-Image-May-6-2026-08-20-35-PM.webp',
+  'https://i.ibb.co/Y77ZqjHM/Chat-GPT-Image-May-6-2026-08-23-34-PM.webp',
 ];
 
 export default function Home() {
@@ -38,6 +42,7 @@ export default function Home() {
     <div>
       {/* HERO */}
       <section className="relative min-h-screen flex items-center overflow-hidden pt-32 pb-20">
+        <VideoBackground src={HERO_VIDEO_URL} fixed={false} />
         <Aurora />
         <div className="relative z-10 container-xl w-full">
           <div className="max-w-5xl">
@@ -148,10 +153,12 @@ export default function Home() {
           <div className="mt-16">
             <Bento items={[
               {
-                title: 'Custom-coded websites',
+                title: 'Custom-coded websites in Ahmedabad',
                 body: 'Hand-built, lightning-fast, conversion-tuned. From ₹4,999.',
                 icon: <Code2 className="w-5 h-5" />,
                 span: 'md:col-span-4 md:row-span-2',
+                highlights: ['SEO-ready website structure for Google ranking', 'Mobile responsive design with fast Vite/React performance', 'WhatsApp inquiry flow for faster lead capture'],
+                tags: ['Website Development Ahmedabad', 'SEO Website Design', 'Landing Page Design', 'Business Website Gujarat'],
                 visual: (
                   <div className="absolute inset-0">
                     <img src="https://images.pexels.com/photos/196645/pexels-photo-196645.jpeg?auto=compress&w=1400" className="w-full h-full object-cover opacity-30" alt="" />

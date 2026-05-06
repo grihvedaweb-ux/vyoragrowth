@@ -5,7 +5,14 @@ export default function ImageMarquee({ images, reverse = false }: { images: stri
       <div className={`flex gap-5 ${reverse ? 'animate-marquee-reverse' : 'animate-marquee-slow'}`}>
         {doubled.map((src, i) => (
           <div key={i} className="shrink-0 w-[320px] md:w-[420px] aspect-[5/3] rounded-3xl overflow-hidden border border-cream-50/10">
-            <img src={src} className="w-full h-full object-cover" alt="" loading="lazy" />
+            <img
+              src={src}
+              className="w-full h-full object-cover select-none"
+              alt=""
+              loading="lazy"
+              draggable={false}
+              onContextMenu={(event) => event.preventDefault()}
+            />
           </div>
         ))}
       </div>

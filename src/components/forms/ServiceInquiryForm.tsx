@@ -1,19 +1,24 @@
 import { useState } from 'react';
-import { supabase } from '../../lib/supabase';
 import { ArrowUpRight, Check } from 'lucide-react';
+import { openWhatsAppWithMessage } from '../../lib/whatsapp';
 
 export default function ServiceInquiryForm({ source = '' }: { source?: string }) {
   const [state, setState] = useState({ name: '', business_name: '', phone: '', service: '', budget: '', message: '' });
-  const [status, setStatus] = useState<'idle' | 'loading' | 'done' | 'error'>('idle');
+  const [status, setStatus] = useState<'idle' | 'loading'>('idle');
 
-  const submit = async (e: React.FormEvent) => {
+  const submit = (e: React.FormEvent) => {
     e.preventDefault();
     setStatus('loading');
-    const { error } = await supabase.from('service_inquiries').insert({ ...state, source_page: source });
-    setStatus(error ? 'error' : 'done');
+    openWhatsAppWithMessage('I want to submit a service inquiry.', [
+      ['Name', state.name],
+      ['Business Name', state.business_name],
+      ['Phone', state.phone],
+      ['Service Required', state.service],
+      ['Budget', state.budget],
+      ['Message', state.message],
+      ['Source Page', source],
+    ]);
   };
-
-  if (status === 'done') return <SuccessCard message="Your inquiry is in. Our team will call you within 24 hours." />;
 
   return (
     <form onSubmit={submit} className="grid md:grid-cols-2 gap-4">
@@ -30,16 +35,15 @@ export default function ServiceInquiryForm({ source = '' }: { source?: string })
         label="Budget"
         value={state.budget}
         onChange={(v) => setState({ ...state, budget: v })}
-        options={['Under ₹5,000', '₹5,000 - ₹20,000', '₹20,000 - ₹50,000', '₹50,000 - ₹1,00,000', '₹1,00,000+']}
+        options={['Under Rs 5,000', 'Rs 5,000 - Rs 20,000', 'Rs 20,000 - Rs 50,000', 'Rs 50,000 - Rs 1,00,000', 'Rs 1,00,000+']}
       />
       <div className="md:col-span-2">
         <TextArea label="Message" value={state.message} onChange={(v) => setState({ ...state, message: v })} />
       </div>
       <div className="md:col-span-2">
         <button disabled={status === 'loading'} className="btn-primary w-full justify-center">
-          {status === 'loading' ? 'Submitting…' : 'Submit Inquiry'} <ArrowUpRight className="w-4 h-4" />
+          {status === 'loading' ? 'Opening WhatsApp...' : 'Submit on WhatsApp'} <ArrowUpRight className="w-4 h-4" />
         </button>
-        {status === 'error' && <p className="mt-3 text-sm text-red-400">Something went wrong. Please try again.</p>}
       </div>
     </form>
   );
@@ -83,7 +87,7 @@ export function Select({ label, value, onChange, options }: { label: string; val
         onChange={(e) => onChange(e.target.value)}
         className="mt-2 w-full bg-ink-900/60 border border-cream-50/10 rounded-2xl px-4 py-3 text-cream-50 focus:border-gold-400 focus:outline-none transition"
       >
-        <option value="">Select…</option>
+        <option value="">Select...</option>
         {options.map((o) => <option key={o} value={o} className="bg-ink-900">{o}</option>)}
       </select>
     </label>

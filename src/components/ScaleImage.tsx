@@ -13,7 +13,13 @@ export default function ScaleImage({ src, alt, children }: { src: string; alt?: 
   }, []);
   return (
     <div ref={ref} className="scale-reveal relative aspect-[16/9] md:aspect-[21/9] w-full">
-      <img src={src} alt={alt} className="w-full h-full object-cover" />
+      <img
+        src={src}
+        alt={alt}
+        className="w-full h-full object-cover select-none"
+        draggable={false}
+        onContextMenu={(event) => event.preventDefault()}
+      />
       {children}
     </div>
   );

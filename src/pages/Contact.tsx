@@ -2,13 +2,14 @@ import Aurora from '../components/Aurora';
 import Reveal from '../components/Reveal';
 import { useSEO } from '../lib/seo';
 import ServiceInquiryForm from '../components/forms/ServiceInquiryForm';
-import { Phone, Mail, MapPin, MessageCircle } from 'lucide-react';
+import { socialLinks } from '../lib/social';
+import { Phone, Mail, MapPin, MessageCircle, Instagram, Facebook, Youtube } from 'lucide-react';
 
 export default function Contact() {
   useSEO({
     title: 'Contact Vyora Growth | Digital Agency Ahmedabad',
     description: 'Call, WhatsApp or submit an inquiry to Vyora Growth. Based in Vatva, Ahmedabad. +91 88665 31993.',
-    keywords: 'Contact Vyora Growth, Digital agency Ahmedabad contact',
+    keywords: 'Contact Vyora Growth, Digital agency Ahmedabad contact, Vyora Growth Instagram, Vyora Growth Facebook, Vyora Growth YouTube',
   });
 
   return (
@@ -52,6 +53,20 @@ export default function Contact() {
                 <a href="https://wa.me/918866531993" target="_blank" rel="noreferrer" className="flex items-center gap-3 text-emerald-400 hover:text-emerald-300 transition">
                   <MessageCircle className="w-5 h-5" /> WhatsApp us
                 </a>
+                <div className="pt-4 border-t border-cream-50/10">
+                  <div className="text-xs uppercase tracking-[0.18em] text-cream-50/40 mb-3">Follow Vyora Growth</div>
+                  <div className="flex items-center gap-3">
+                    <a href={socialLinks.instagram} target="_blank" rel="noreferrer" className="w-10 h-10 flex items-center justify-center rounded-full border border-cream-50/15 hover:border-gold-400 hover:text-gold-400 transition" aria-label="Instagram">
+                      <Instagram className="w-4 h-4" />
+                    </a>
+                    <a href={socialLinks.facebook} target="_blank" rel="noreferrer" className="w-10 h-10 flex items-center justify-center rounded-full border border-cream-50/15 hover:border-gold-400 hover:text-gold-400 transition" aria-label="Facebook">
+                      <Facebook className="w-4 h-4" />
+                    </a>
+                    <a href={socialLinks.youtube} target="_blank" rel="noreferrer" className="w-10 h-10 flex items-center justify-center rounded-full border border-cream-50/15 hover:border-gold-400 hover:text-gold-400 transition" aria-label="YouTube">
+                      <Youtube className="w-4 h-4" />
+                    </a>
+                  </div>
+                </div>
               </div>
             </Reveal>
             <Reveal delay={150}>
