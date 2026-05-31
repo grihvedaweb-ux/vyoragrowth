@@ -11,6 +11,7 @@ import Blog from './pages/Blog';
 import BlogPost from './pages/BlogPost';
 import SEOLanding from './pages/SEOLanding';
 import NotFound from './pages/NotFound';
+import FAQPage from './pages/FAQPage';
 
 const routerBasename = import.meta.env.BASE_URL === '/' ? undefined : import.meta.env.BASE_URL.replace(/\/$/, '');
 
@@ -28,6 +29,7 @@ export default function App() {
           <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
+          <Route path="/faq" element={<FAQPage />} />
           <Route path="/ahmedabad/:slug" element={<SEOLanding />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

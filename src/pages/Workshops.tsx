@@ -13,21 +13,29 @@ export default function Workshops() {
     title: 'Workshops | Ads & AI Earning Workshops in Ahmedabad — Vyora Growth',
     description: '3-day Ads Chalana Seekho workshop & 7-day AI Se Earning Seekho workshop. Online + offline cohorts in Ahmedabad.',
     keywords: 'AI Workshop Ahmedabad, Ads Training Ahmedabad, AI Course Gujarat, AI Earning Workshop',
+    schema: {
+      '@context': 'https://schema.org',
+      '@type': 'ItemList',
+      itemListElement: [
+        { '@type': 'Course', name: 'Ads Chalana Seekho', description: 'A 3-day practical Meta and Google Ads training workshop by Vyora Growth in Ahmedabad.' },
+        { '@type': 'Course', name: 'AI Se Earning Seekho', description: 'A 7-day practical AI tools and earning workflow workshop by Vyora Growth.' },
+      ],
+    },
   });
 
   return (
     <div>
-      <section className="relative pt-40 pb-20 overflow-hidden">
+      <section className="relative pt-32 pb-14 overflow-hidden">
         <Aurora />
         <div className="container-xl relative z-10">
           <Reveal><div className="text-xs uppercase tracking-[0.28em] text-gold-400">Workshops</div></Reveal>
           <Reveal delay={100}>
-            <h1 className="mt-6 font-display text-6xl md:text-8xl leading-[0.95]">
+            <h1 className="mt-5 font-display text-5xl md:text-7xl leading-[0.96]">
               Learn. Build. <span className="italic text-gradient">Earn</span>.
             </h1>
           </Reveal>
           <Reveal delay={200}>
-            <p className="mt-8 max-w-2xl text-lg text-cream-50/65 leading-relaxed">
+            <p className="mt-6 max-w-2xl text-lg text-cream-50/65 leading-relaxed">
               Live cohorts led by senior operators. Every session is practical — walk out with work you can ship and skills you can bill for.
             </p>
           </Reveal>
@@ -38,16 +46,22 @@ export default function Workshops() {
         <div className="container-xl grid lg:grid-cols-2 gap-8">
           {/* ADS WORKSHOP */}
           <Reveal>
-            <div className="gradient-border rounded-3xl p-8 md:p-10 relative overflow-hidden h-full">
+            <div className="agency-card rounded-3xl p-6 md:p-8 relative overflow-hidden h-full hover-lift">
               <div className="absolute -top-20 -right-20 w-60 h-60 rounded-full opacity-40" style={{ background: 'radial-gradient(circle, rgba(201,166,104,0.3), transparent 60%)', filter: 'blur(40px)' }} />
               <div className="relative">
                 <div className="flex items-center gap-3">
                   <Megaphone className="w-6 h-6 text-gold-400" />
                   <div className="text-xs uppercase tracking-[0.22em] text-gold-400">Cohort 01</div>
                 </div>
-                <h2 className="mt-4 font-display text-4xl md:text-5xl">Ads Chalana Seekho</h2>
+                <div className="mt-4 flex flex-wrap gap-2">
+                  {['Most practical', 'Beginner friendly', 'Live cohort'].map((badge) => (
+                    <span key={badge} className="agency-kicker tracking-[0.12em]">{badge}</span>
+                  ))}
+                </div>
+                <h2 className="mt-4 font-display text-3xl md:text-4xl">Ads Chalana Seekho</h2>
                 <p className="mt-4 text-cream-50/65 leading-relaxed">A 3-day intensive on Meta & Google ads. Real campaigns, real budgets, real outcomes — taught hands-on.</p>
                 <div className="mt-6 grid grid-cols-2 gap-3 text-sm">
+                  <div className="glass rounded-2xl p-4"><div className="text-cream-50/50 text-xs uppercase tracking-widest">Fee</div><div className="font-display text-2xl text-gold-400 mt-1">₹4,999</div></div>
                   <div className="glass rounded-2xl p-4"><Calendar className="w-4 h-4 text-gold-400 mb-2" /><div className="text-cream-50/50 text-xs uppercase tracking-widest">Duration</div><div className="text-cream-50 mt-1">3 Days · 2 Hours/Day</div></div>
                   <div className="glass rounded-2xl p-4"><MapPin className="w-4 h-4 text-gold-400 mb-2" /><div className="text-cream-50/50 text-xs uppercase tracking-widest">Offline</div><div className="text-cream-50 mt-1">Fri–Sun · 2–4 PM</div></div>
                   <div className="glass rounded-2xl p-4 col-span-2"><Clock className="w-4 h-4 text-gold-400 mb-2" /><div className="text-cream-50/50 text-xs uppercase tracking-widest">Online</div><div className="text-cream-50 mt-1">Evening · 7–9 PM</div></div>
@@ -64,14 +78,19 @@ export default function Workshops() {
 
           {/* AI WORKSHOP */}
           <Reveal delay={100}>
-            <div className="gradient-border rounded-3xl p-8 md:p-10 relative overflow-hidden h-full">
+            <div className="agency-card rounded-3xl p-6 md:p-8 relative overflow-hidden h-full hover-lift">
               <div className="absolute -top-20 -left-20 w-60 h-60 rounded-full opacity-40" style={{ background: 'radial-gradient(circle, rgba(201,166,104,0.3), transparent 60%)', filter: 'blur(40px)' }} />
               <div className="relative">
                 <div className="flex items-center gap-3">
                   <Brain className="w-6 h-6 text-gold-400" />
                   <div className="text-xs uppercase tracking-[0.22em] text-gold-400">Cohort 02</div>
                 </div>
-                <h2 className="mt-4 font-display text-4xl md:text-5xl">AI Se Earning Seekho</h2>
+                <div className="mt-4 flex flex-wrap gap-2">
+                  {['Most practical', 'Beginner friendly', 'Live cohort'].map((badge) => (
+                    <span key={badge} className="agency-kicker tracking-[0.12em]">{badge}</span>
+                  ))}
+                </div>
+                <h2 className="mt-4 font-display text-3xl md:text-4xl">AI Se Earning Seekho</h2>
                 <p className="mt-4 text-cream-50/65 leading-relaxed">A 7-day live cohort that teaches you how to actually monetise AI — posters, logos, websites, content and automation.</p>
                 <div className="mt-6 grid grid-cols-2 gap-3 text-sm">
                   <div className="glass rounded-2xl p-4"><Calendar className="w-4 h-4 text-gold-400 mb-2" /><div className="text-cream-50/50 text-xs uppercase tracking-widest">Duration</div><div className="text-cream-50 mt-1">7 Days · Mon–Sun</div></div>
@@ -91,13 +110,44 @@ export default function Workshops() {
         </div>
       </section>
 
+      <section className="section-pad pt-0">
+        <div className="container-xl grid lg:grid-cols-2 gap-8">
+          <Reveal>
+            <div className="agency-card rounded-3xl p-6 md:p-8 h-full">
+              <SectionHeading eyebrow="What you will build" title={<>Real outputs, not just <span className="italic text-gradient">theory</span>.</>} />
+              <div className="mt-8 grid sm:grid-cols-2 gap-3">
+                {['Campaign setup plan', 'Ad creative angles', 'Lead form structure', 'AI posters and banners', 'AI website draft', 'Automation workflow'].map((item) => (
+                  <div key={item} className="glass rounded-2xl p-4 flex items-center gap-3">
+                    <CheckCircle2 className="w-5 h-5 text-gold-400 shrink-0" />
+                    <span className="text-cream-50/75">{item}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </Reveal>
+          <Reveal delay={100}>
+            <div className="agency-card rounded-3xl p-6 md:p-8 h-full">
+              <SectionHeading eyebrow="Who this is for" title={<>Built for people who want to <span className="italic text-gradient">ship</span>.</>} />
+              <div className="mt-8 grid sm:grid-cols-2 gap-3">
+                {['Students', 'Shop owners', 'Freelancers', 'Business owners', 'Creators', 'Marketing teams'].map((item) => (
+                  <div key={item} className="glass rounded-2xl p-4">
+                    <div className="font-display text-2xl text-cream-50">{item}</div>
+                    <p className="mt-2 text-sm text-cream-50/55">Practical workflows you can use immediately.</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
       <section id="register" className="section-pad">
         <div className="container-xl grid lg:grid-cols-5 gap-12">
           <div className="lg:col-span-2">
             <SectionHeading eyebrow="Register" title={<>Claim your <span className="italic text-gradient">seat</span>.</>} description="Cohort seats are limited so every participant gets direct attention. Fill in your details and we’ll WhatsApp you the joining link." />
           </div>
           <div className="lg:col-span-3">
-            <div className="gradient-border rounded-3xl p-8 md:p-10">
+            <div className="agency-card rounded-3xl p-6 md:p-8">
               <WorkshopForm />
             </div>
           </div>

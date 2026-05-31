@@ -27,7 +27,7 @@ export default function FAQ({ items }: { items: FAQItem[] }) {
                   </div>
                 </div>
               </div>
-              <div className="w-10 h-10 shrink-0 rounded-full border border-cream-50/20 flex items-center justify-center text-cream-50/70">
+              <div className="faq-toggle w-10 h-10 shrink-0 rounded-full border border-cream-50/20 flex items-center justify-center text-cream-50/70">
                 {active ? <Minus className="w-4 h-4" /> : <Plus className="w-4 h-4" />}
               </div>
             </button>

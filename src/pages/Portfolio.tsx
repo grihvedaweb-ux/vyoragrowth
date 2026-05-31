@@ -65,7 +65,7 @@ export default function Portfolio() {
                 href={item.url}
                 target="_blank"
                 rel="noreferrer"
-                className="group block h-full rounded-3xl overflow-hidden border border-cream-50/10 bg-ink-900/60 hover-lift"
+                className="agency-card group block h-full rounded-3xl overflow-hidden hover-lift"
               >
                 <div className="relative aspect-[16/10] overflow-hidden bg-ink-900">
                   <img
@@ -89,7 +89,17 @@ export default function Portfolio() {
                     </div>
                     <ExternalLink className="mt-1 w-5 h-5 shrink-0 text-cream-50/40 group-hover:text-gold-400 transition" />
                   </div>
-                  <div className="mt-5 flex items-center justify-between gap-3 rounded-2xl border border-cream-50/10 bg-ink-950/45 px-4 py-3">
+                  <div className="mt-5 grid grid-cols-2 gap-3">
+                    <div className="rounded-2xl border border-cream-50/10 bg-white/55 p-3">
+                      <div className="text-[10px] uppercase tracking-[0.18em] text-cream-50/45">Goal</div>
+                      <div className="mt-1 text-sm text-cream-50/75">Trust + inquiries</div>
+                    </div>
+                    <div className="rounded-2xl border border-cream-50/10 bg-white/55 p-3">
+                      <div className="text-[10px] uppercase tracking-[0.18em] text-cream-50/45">Solution</div>
+                      <div className="mt-1 text-sm text-cream-50/75">SEO-ready site</div>
+                    </div>
+                  </div>
+                  <div className="mt-4 flex items-center justify-between gap-3 rounded-2xl border border-cream-50/10 bg-ink-950/45 px-4 py-3">
                     <span className="min-w-0 break-all text-sm text-cream-50/65">{item.url.replace(/^https?:\/\//, '')}</span>
                     <ArrowUpRight className="w-4 h-4 shrink-0 text-gold-400" />
                   </div>
@@ -106,7 +116,7 @@ export default function Portfolio() {
           <div className="mt-12 grid md:grid-cols-4 gap-6">
             {[{ n: `${work.length}+`, l: 'Websites listed' }, { n: '15+', l: 'Business categories' }, { n: 'SEO', l: 'Search-ready builds' }, { n: 'WhatsApp', l: 'Lead-focused CTAs' }].map((stat, i) => (
               <Reveal key={stat.l} delay={i * 80}>
-                <div className="rounded-3xl border border-cream-50/10 p-8 bg-ink-900/50">
+                <div className="agency-card rounded-3xl p-8 h-full">
                   <div className="font-display text-5xl text-cream-50">{stat.n}</div>
                   <div className="text-sm uppercase tracking-[0.2em] text-cream-50/50 mt-2">{stat.l}</div>
                 </div>

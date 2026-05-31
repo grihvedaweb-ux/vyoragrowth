@@ -56,13 +56,13 @@ export default function Contact() {
                 <div className="pt-4 border-t border-cream-50/10">
                   <div className="text-xs uppercase tracking-[0.18em] text-cream-50/40 mb-3">Follow Vyora Growth</div>
                   <div className="flex items-center gap-3">
-                    <a href={socialLinks.instagram} target="_blank" rel="noreferrer" className="w-10 h-10 flex items-center justify-center rounded-full border border-cream-50/15 hover:border-gold-400 hover:text-gold-400 transition" aria-label="Instagram">
+                    <a href={socialLinks.instagram} target="_blank" rel="noreferrer" className="icon-button w-10 h-10 flex items-center justify-center rounded-full border border-cream-50/15 hover:text-gold-400" aria-label="Instagram">
                       <Instagram className="w-4 h-4" />
                     </a>
-                    <a href={socialLinks.facebook} target="_blank" rel="noreferrer" className="w-10 h-10 flex items-center justify-center rounded-full border border-cream-50/15 hover:border-gold-400 hover:text-gold-400 transition" aria-label="Facebook">
+                    <a href={socialLinks.facebook} target="_blank" rel="noreferrer" className="icon-button w-10 h-10 flex items-center justify-center rounded-full border border-cream-50/15 hover:text-gold-400" aria-label="Facebook">
                       <Facebook className="w-4 h-4" />
                     </a>
-                    <a href={socialLinks.youtube} target="_blank" rel="noreferrer" className="w-10 h-10 flex items-center justify-center rounded-full border border-cream-50/15 hover:border-gold-400 hover:text-gold-400 transition" aria-label="YouTube">
+                    <a href={socialLinks.youtube} target="_blank" rel="noreferrer" className="icon-button w-10 h-10 flex items-center justify-center rounded-full border border-cream-50/15 hover:text-gold-400" aria-label="YouTube">
                       <Youtube className="w-4 h-4" />
                     </a>
                   </div>

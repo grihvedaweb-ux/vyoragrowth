@@ -9,12 +9,12 @@ export default function CTASection({
   return (
     <section className="section-pad">
       <div className="container-xl">
-        <div className="relative overflow-hidden rounded-[2.5rem] border border-cream-50/10 bg-gradient-to-br from-ink-800 to-ink-900 p-10 md:p-20">
+        <div className="premium-card relative overflow-hidden rounded-[2.5rem] border border-cream-50/10 p-8 md:p-16">
           <div className="aurora-bg" />
           <div className="relative z-10 grid md:grid-cols-2 gap-10 items-center">
             <div>
               <Reveal>
-                <div className="text-xs uppercase tracking-[0.28em] text-gold-400 mb-5">Let's collaborate</div>
+                <div className="mb-5 inline-flex rounded-full border border-white/25 bg-white/15 px-3 py-1.5 text-xs uppercase tracking-[0.22em] text-white/85">Let's collaborate</div>
               </Reveal>
               <Reveal delay={80}>
                 <h2 className="font-display text-4xl md:text-6xl leading-[1.02] text-cream-50">{title}</h2>

@@ -2,7 +2,7 @@ export default function ImageMarquee({ images, reverse = false }: { images: stri
   const doubled = [...images, ...images];
   return (
     <div className="relative overflow-hidden">
-      <div className={`flex gap-5 ${reverse ? 'animate-marquee-reverse' : 'animate-marquee-slow'}`}>
+      <div className={`marquee-track flex gap-5 ${reverse ? 'animate-marquee-reverse' : 'animate-marquee-slow'}`}>
         {doubled.map((src, i) => (
           <div key={i} className="shrink-0 w-[320px] md:w-[420px] aspect-[5/3] rounded-3xl overflow-hidden border border-cream-50/10">
             <img

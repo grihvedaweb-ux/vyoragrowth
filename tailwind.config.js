@@ -33,9 +33,9 @@ export default {
         'aurora': 'aurora 22s ease infinite',
         'float': 'float 8s ease-in-out infinite',
         'fade-up': 'fadeUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards',
-        'marquee': 'marquee 24s linear infinite',
-        'marquee-slow': 'marquee 55s linear infinite',
-        'marquee-reverse': 'marqueeReverse 42s linear infinite',
+        'marquee': 'marquee 12s linear infinite',
+        'marquee-slow': 'marquee 27.5s linear infinite',
+        'marquee-reverse': 'marqueeReverse 21s linear infinite',
       },
       keyframes: {
         aurora: {

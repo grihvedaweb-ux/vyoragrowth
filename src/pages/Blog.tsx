@@ -39,7 +39,7 @@ export default function Blog() {
         <div className="container-xl">
           <div className="flex flex-wrap gap-2 mb-12">
             {['All', ...categories].map(c => (
-              <button key={c} className="px-4 py-2 rounded-full border border-cream-50/10 text-sm text-cream-50/70 hover:text-cream-50 hover:border-gold-400 transition">
+              <button key={c} className="category-button px-4 py-2 rounded-full border border-cream-50/10 text-sm text-cream-50/70 hover:text-cream-50">
                 {c}
               </button>
             ))}

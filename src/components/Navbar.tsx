@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import { Menu, X, ArrowUpRight } from 'lucide-react';
-import ThemeToggle from './ThemeToggle';
 
 const LOGO = 'https://i.ibb.co/60dxwj2m/VYORA-GROWTH-1.png';
 
@@ -12,6 +11,7 @@ const navLinks = [
   { to: '/workshops', label: 'Workshops' },
   { to: '/portfolio', label: 'Work' },
   { to: '/blog', label: 'Blog' },
+  { to: '/faq', label: 'FAQ' },
   { to: '/contact', label: 'Contact' },
 ];
 
@@ -57,8 +57,8 @@ export default function Navbar() {
                 to={l.to}
                 end={l.to === '/'}
                 className={({ isActive }) =>
-                  `px-4 py-2 text-sm rounded-full transition-colors ${
-                    isActive ? 'text-cream-50 bg-cream-50/10' : 'text-cream-50/70 hover:text-cream-50'
+                  `nav-button px-4 py-2 text-sm rounded-full ${
+                    isActive ? 'is-active text-cream-50' : 'text-cream-50/70 hover:text-cream-50'
                   }`
                 }
               >
@@ -68,16 +68,15 @@ export default function Navbar() {
           </nav>
 
           <div className="flex items-center gap-2">
-            <div className="hidden md:block"><ThemeToggle compact /></div>
             <Link
               to="/contact"
-              className="hidden md:inline-flex items-center gap-1.5 text-sm px-4 py-2 rounded-full bg-cream-50 text-ink-950 hover:bg-cream-100 transition"
+              className="btn-primary hidden md:inline-flex items-center gap-1.5 text-sm px-4 py-2"
             >
               Book Call <ArrowUpRight className="w-4 h-4" />
             </Link>
             <button
               onClick={() => setOpen(!open)}
-              className="lg:hidden w-10 h-10 flex items-center justify-center rounded-full border border-cream-50/15"
+              className="icon-button lg:hidden w-10 h-10 flex items-center justify-center rounded-full border border-cream-50/15"
               aria-label="Menu"
             >
               {open ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -95,14 +94,13 @@ export default function Navbar() {
                 to={l.to}
                 end={l.to === '/'}
                 className={({ isActive }) =>
-                  `px-4 py-3 rounded-2xl text-base ${isActive ? 'text-cream-50 bg-cream-50/10' : 'text-cream-50/80'}`
+                  `nav-button px-4 py-3 rounded-2xl text-base ${isActive ? 'is-active text-cream-50' : 'text-cream-50/80'}`
                 }
               >
                 {l.label}
               </NavLink>
             ))}
             <div className="mt-3 flex items-center gap-2">
-              <ThemeToggle />
               <Link to="/contact" className="btn-primary flex-1 justify-center">Book Free Consultation</Link>
             </div>
           </div>

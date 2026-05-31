@@ -6,7 +6,7 @@ const LOGO = 'https://i.ibb.co/60dxwj2m/VYORA-GROWTH-1.png';
 
 export default function Footer() {
   return (
-    <footer className="relative mt-10 border-t border-cream-50/10 bg-ink-950">
+    <footer className="site-footer relative mt-10 border-t border-cream-50/10 bg-ink-950">
       <div className="max-w-7xl mx-auto px-6 md:px-10 py-20">
         <div className="grid md:grid-cols-12 gap-12">
           <div className="md:col-span-5">
@@ -21,9 +21,9 @@ export default function Footer() {
               A premium AI-powered digital agency helping ambitious brands in Ahmedabad and across India scale with modern websites, performance marketing, and AI systems.
             </p>
             <div className="mt-8 flex items-center gap-3">
-              <a href={socialLinks.instagram} target="_blank" rel="noreferrer" className="w-10 h-10 flex items-center justify-center rounded-full border border-cream-50/15 hover:border-gold-400 hover:text-gold-400 transition" aria-label="Instagram"><Instagram className="w-4 h-4" /></a>
-              <a href={socialLinks.facebook} target="_blank" rel="noreferrer" className="w-10 h-10 flex items-center justify-center rounded-full border border-cream-50/15 hover:border-gold-400 hover:text-gold-400 transition" aria-label="Facebook"><Facebook className="w-4 h-4" /></a>
-              <a href={socialLinks.youtube} target="_blank" rel="noreferrer" className="w-10 h-10 flex items-center justify-center rounded-full border border-cream-50/15 hover:border-gold-400 hover:text-gold-400 transition" aria-label="YouTube"><Youtube className="w-4 h-4" /></a>
+              <a href={socialLinks.instagram} target="_blank" rel="noreferrer" className="icon-button w-10 h-10 flex items-center justify-center rounded-full border border-cream-50/15 hover:text-gold-400" aria-label="Instagram"><Instagram className="w-4 h-4" /></a>
+              <a href={socialLinks.facebook} target="_blank" rel="noreferrer" className="icon-button w-10 h-10 flex items-center justify-center rounded-full border border-cream-50/15 hover:text-gold-400" aria-label="Facebook"><Facebook className="w-4 h-4" /></a>
+              <a href={socialLinks.youtube} target="_blank" rel="noreferrer" className="icon-button w-10 h-10 flex items-center justify-center rounded-full border border-cream-50/15 hover:text-gold-400" aria-label="YouTube"><Youtube className="w-4 h-4" /></a>
             </div>
           </div>
 
@@ -35,6 +35,7 @@ export default function Footer() {
               <li><Link to="/workshops" className="hover:text-gold-400 transition">Workshops</Link></li>
               <li><Link to="/portfolio" className="hover:text-gold-400 transition">Portfolio</Link></li>
               <li><Link to="/blog" className="hover:text-gold-400 transition">Blog</Link></li>
+              <li><Link to="/faq" className="hover:text-gold-400 transition">FAQ</Link></li>
               <li><Link to="/contact" className="hover:text-gold-400 transition">Contact</Link></li>
             </ul>
           </div>
@@ -56,6 +57,7 @@ export default function Footer() {
             <Link to="/services/website-development" className="hover:text-gold-400">Websites</Link>
             <Link to="/services/ads-management" className="hover:text-gold-400">Ads</Link>
             <Link to="/services/social-media-management" className="hover:text-gold-400">Social</Link>
+            <Link to="/faq" className="hover:text-gold-400">FAQ</Link>
             <Link to="/services/ai-workshop" className="inline-flex items-center gap-1 hover:text-gold-400">AI Workshops <ArrowUpRight className="w-3.5 h-3.5" /></Link>
           </div>
         </div>

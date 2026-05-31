@@ -4,7 +4,7 @@ export default function Marquee({ items }: { items: ReactNode[] }) {
   const doubled = [...items, ...items];
   return (
     <div className="relative overflow-hidden">
-      <div className="flex gap-16 animate-marquee whitespace-nowrap">
+      <div className="marquee-track flex gap-16 animate-marquee whitespace-nowrap">
         {doubled.map((it, i) => (
           <div key={i} className="shrink-0 text-cream-50/40">{it}</div>
         ))}
